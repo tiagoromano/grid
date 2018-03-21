@@ -1,0 +1,125 @@
+<h3>Teste</h3><datasource name="Datasource7ca8" entity="api/cronapi/query/1iuke4m61bprl/" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" data-component="crn-datasource" class="component-holder" id="crn-datasource-607736" filter=""></datasource> 
+<!-- div row para pesquisa --> 
+<!--<div class="row">--> 
+<div ng-hide="Teste.inserting || Teste.editing" data-component="crn-datasource-filter" id="crn-datasource-filter-general" class=""> 
+  <div class="form-group"> 
+    <label for="textinput-filter" class="">{{"template.crud.search" | translate}}</label> 
+    <input type="text" ng-model="vars.search" cronapp-filter="campo01;" cronapp-filter-operator="" cronapp-filter-caseinsensitive="false" cronapp-filter-autopost="true" crn-datasource="Teste" class="form-control" value="" placeholder="{{'template.crud.search' | translate}}"> 
+  </div> 
+</div> 
+<div class="component-holder ng-binding ng-scope" data-component="crn-textinput" id="crn-textinput-924457">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Filtro campo01</label>
+    <input type="text" mask="" mask-placeholder="" ng-required="false" ng-model="vars.filtroCampo1" class="form-control" id="input5705" placeholder="Placeholder text">
+  </div>
+</div>
+<div data-component="crn-button" id="crn-button-564202" class=""> 
+  <button class="btn btn-primary" type="submit" onclick="" data-component="crn-button" ng-click="Teste.startInserting()" ng-hide="Teste.inserting || Teste.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+</div> 
+<!-- fim div row para pesquisa --> 
+<!--</div>--> 
+<datasource filter="" name="Teste" entity="api/cronapi/crud/app.entity.Teste" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+<div class="component-holder" data-component="crn-grid" id="crn-grid-Teste"> 
+  <div crn-datasource="Teste" class="" ng-hide="Teste.editing || Teste.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div class="">
+              Campo 01
+            </div> </th> 
+          <th class=""> 
+            <div class="">
+              Campo 02
+            </div> </th> 
+          <th class=""> 
+            <div class="">
+              Campo 03
+            </div> </th> 
+          <th class=""> 
+            <div class="">
+              {{"template.crud.actions" | translate}}
+            </div> </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div class="">
+               {{rowData.campo01 }} 
+            </div> </td> 
+          <td class=""> 
+            <div class="">
+               {{rowData.campo02 }} 
+            </div> </td> 
+          <td class=""> 
+            <div class="">
+               {{rowData.campo03 }} 
+            </div> </td> 
+          <td class=""> 
+            <div class=""> 
+              <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div> </td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button> 
+    </div> 
+  </div> 
+</div> 
+<div data-component="crn-form" id="crn-form-form-Teste"> 
+  <div class="form" ng-show="Teste.editing || Teste.inserting"> 
+    <form crn-datasource="Teste" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" data-component="crn-button" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" data-component="crn-button" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" data-component="crn-button" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <br> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div data-component="crn-textinput" id="crn-textinput-campo01" class=""> 
+          <div class="form-group"> 
+            <label for="textinput-campo01" class="">Campo 01</label> 
+            <!-- else for if !model.hasCronappFramework() --> 
+            <input type="text" ng-model="Teste.active.campo01" class="form-control" id="textinput-campo01" placeholder="Campo 01" mask="" mask-placeholder="" ng-required="false"> 
+            <!-- end if !model.hasCronappFramework() --> 
+          </div> 
+        </div> 
+        <div data-component="crn-textinput" id="crn-textinput-campo02" class=""> 
+          <div class="form-group"> 
+            <label for="textinput-campo02" class="">Campo 02</label> 
+            <!-- else for if !model.hasCronappFramework() --> 
+            <input type="text" ng-model="Teste.active.campo02" class="form-control" id="textinput-campo02" placeholder="Campo 02" mask="" mask-placeholder="" ng-required="false"> 
+            <!-- end if !model.hasCronappFramework() --> 
+          </div> 
+        </div> 
+        <div data-component="crn-textinput" id="crn-textinput-campo03" class=""> 
+          <div class="form-group"> 
+            <label for="textinput-campo03" class="">Campo 03</label> 
+            <!-- else for if !model.hasCronappFramework() --> 
+            <input type="text" ng-model="Teste.active.campo03" class="form-control" id="textinput-campo03" placeholder="Campo 03" mask="" mask-placeholder="" ng-required="false"> 
+            <!-- end if !model.hasCronappFramework() --> 
+          </div> 
+        </div> 
+        <!-- NtoN  --> 
+        <!-- NtoN  end--> 
+      </fieldset> 
+    </form> 
+    <form> 
+      <fieldset> 
+        <!-- OneToN --> 
+        <!-- OneToOne  end --> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<!-- OneToOne modal --> 
+<!-- OneToOne modal end-->

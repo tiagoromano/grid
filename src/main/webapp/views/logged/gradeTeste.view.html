@@ -1,0 +1,82 @@
+<datasource name="Teste" entity="api/cronapi/query/1jydrt66fli06/" keys="id" rows-per-page="100" on-before-create="" on-after-create="" on-before-update="" on-after-update="" on-before-delete="" on-after-delete="" on-after-fill="" data-component="crn-datasource" class="component-holder" id="crn-datasource-668524"></datasource>
+<div class="component-holder ng-binding ng-scope col-md-12" data-component="crn-cronapp-grid"> 
+  <cronapp-grid options="{&quot;dataSource&quot;:{&quot;id&quot;:&quot;Teste&quot;,&quot;serviceUrl&quot;:null,&quot;serviceBaseUrl&quot;:null,&quot;pathView&quot;:&quot;src/main/webapp/views/logged/gradeTeste.view.html&quot;,&quot;paramValues&quot;:null,&quot;keys&quot;:null},&quot;allowPaging&quot;:false,&quot;allowSorting&quot;:false,&quot;allowGrouping&quot;:false,&quot;allowSelection&quot;:false,&quot;selectionOption&quot;:null,&quot;height&quot;:null,&quot;pageCount&quot;:null,&quot;columns&quot;:[{&quot;field&quot;:&quot;campo01&quot;,&quot;headerText&quot;:&quot;Campo01&quot;,&quot;width&quot;:null,&quot;textAlign&quot;:null}]}" data-component="crn-cronapp-grid" class="component-holder" id="crn-cronapp-grid-547499">
+    GRID
+  </cronapp-grid>
+</div>
+<table id="grid"></table>
+<script>
+    $(function() {
+        debugger;
+        $("#grid").igGrid({
+            	primaryKey: "id",
+            // 	caption : "<span> <img src=\"//www.infragistics.com/media/441501/horz_logo.png\" alt=\"Infragistics\"></span>",
+                width: '100%',
+                columns: [
+                    { headerText: "Id", key: "id", dataType: "string", width: "15%", hidden: false },
+                    { headerText: "Campo 01", key: "campo01", dataType: "string", width: "15%" },
+                    { headerText: "Campo 02", key: "campo02", dataType: "string", width: "15%" },
+                    { headerText: "Campo 03", key: "campo03", dataType: "string", width: "25%" }
+                    // { headerText: "Category", key: "CategoryName", dataType: "string", width: "25%" },
+                    // { headerText: "Units In Stock", key: "InStock", dataType: "number", width: "35%" }
+                ],
+                autofitLastColumn: false,
+                autoGenerateColumns: false,
+                dataSource: Teste.data,
+                // responseDataKey: "results",
+                autoCommit: true,
+                features: [
+                    {
+                        name: "Sorting",
+                        sortingDialogContainment: "window"
+                    },
+                    {
+                        name: "Filtering",
+                        type: "local",
+                        columnSettings: [
+                            {
+                                columnKey: "id",
+                                allowFiltering: false
+                            }
+                            // ,
+                            // {
+                            //     columnKey: "InStock",
+                            //     condition: "greaterThan"
+                            // }
+                        ]
+                    },
+                    {
+                        name: "GroupBy",
+                        columnSettings: [
+                            {
+                                columnKey: "campo01",
+                                isGroupBy: true
+                            }
+                        ]
+                    },
+                    {
+                        name: "Selection"
+                    },
+                    {
+                        name: "Paging",
+                        pageSize: 10
+                    },
+                    {
+                        name: "Resizing"
+                    },
+                    {
+                        name: "Updating",
+                        editMode: "dialog",
+                        enableAddRow: false
+                        // ,
+                        // columnSettings: [
+                        //     {
+                        //         columnKey: "ImageUrl",
+                        //         readOnly: false
+                        //     }
+                        //]
+                    }
+                ]
+            });
+    });
+</script>
